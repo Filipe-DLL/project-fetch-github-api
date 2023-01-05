@@ -1,4 +1,4 @@
-import { url, numberEvents } from "/src/scripts/variables.js"
+import { url, numberEvents } from "../variables.js"
 
 async function getRecentEvents(userSearch) {
     const response = await fetch(`${url}/${userSearch}/events?per_page=${numberEvents}`)

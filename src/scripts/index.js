@@ -1,9 +1,9 @@
-import { getUser } from "./src/scripts/services/users.js"
-import { getRepositories } from "./src/scripts/services/repos.js"
-import { getRecentEvents } from "./src/scripts/services/recent-events.js"
+import { getUser } from "./services/users.js"
+import { getRepositories } from "./services/repos.js"
+import { getRecentEvents } from "./services/recent-events.js"
 
-import { user } from "./src/scripts/objects/user.js"
-import { screen } from "./src/scripts/objects/screen.js"
+import { user } from "./objects/user.js"
+import { screen } from "./objects/screen.js"
 
 document.querySelector("#btn-search").addEventListener("click", () => {
     const userSearch = document.querySelector("#input-search").value

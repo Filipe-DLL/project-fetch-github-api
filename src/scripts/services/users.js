@@ -1,4 +1,4 @@
-import { url } from "/src/scripts/variables.js"
+import { url } from "../variables.js"
 
 async function getUser(userSearch) {
     const response = await fetch(`${url}/${userSearch}`)
