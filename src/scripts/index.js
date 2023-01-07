@@ -45,6 +45,5 @@ async function showUserProfile(userSearch) {
     user.setRepositories(repositories)
     user.setRecentEvents(recentEvents)
 
-    screen.renderUser(user)
-
+    await screen.renderScreen(user)
 }

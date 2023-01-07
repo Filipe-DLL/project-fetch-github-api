@@ -1,45 +1,56 @@
 const screen = {
     userProfile: document.querySelector(".profile-data"),
 
+    renderScreen(user) {
+        this.userProfile.innerHTML = ""
+        this.renderUser(user)
+        this.renderRepositories(user)
+        this.renderEvent(user)
+    },
+
     renderUser(user) {
         this.userProfile.innerHTML =
-            `<div class="info">
-                <img src="${user.avatarUrl}" alt="Foto do usuário"/><br>
-                <div class="data">
-                    <h1>${user.name ?? "Não possui nome cadastrado"}</h1>
-                    <p>${user.login ?? "Não possui login"}</p>
-                    <p>${user.bio ?? "Não possui bio"}</p>
-                    <h3>Seguidores:${user.followers} &nbsp;&nbsp; Seguindo:${user.following}</h3>
-                </div>
+        `<div class="info">
+            <img src="${user.avatarUrl}" alt="Foto do usuário"/><br>
+            <div class="data">
+                <h1>${user.name ?? "Não possui nome cadastrado"}</h1>
+                <p>${user.login ?? "Não possui login"}</p>
+                <p>${user.bio ?? "Não possui bio"}</p>
+                <h3>Seguidores:${user.followers} &nbsp;&nbsp; Seguindo:${user.following}</h3>
             </div>
-            <hr>`
+        </div>
+        <hr>`
+    },
 
+    renderRepositories(user) {
         let repositoriesList = ""
 
         user.repositories.forEach(element => {
             repositoriesList += `   <li>
-                                        <a href="${element.html_url}" target="_blank">
-                                        <p>${element.name}</p>
-                                        <div class="icons">🍴${element.forks_count}</div>
-                                        <div class="icons">⭐${element.stargazers_count}</div>
-                                        <div class="icons">👀${element.watchers_count}</div>
-                                        <div class="icons">💻${element.language}</div>
-                                        </a>
-                                    </li>`
+                                            <a href="${element.html_url}" target="_blank">
+                                            <p>${element.name}</p>
+                                            <div class="icons">🍴${element.forks_count}</div>
+                                            <div class="icons">⭐${element.stargazers_count}</div>
+                                            <div class="icons">👀${element.watchers_count}</div>
+                                            <div class="icons">💻${element.language}</div>
+                                            </a>
+                                        </li>`
         });
 
         if (user.repositories.length > 0) {
             this.userProfile.innerHTML += ` <div class="repositories section">
-                                                <h2>Repositórios</h2>
-                                                <ul>${repositoriesList}</ul>
-                                            </div>
-                                            <hr>`
+                                                        <h2>Repositórios</h2>
+                                                        <ul>${repositoriesList}</ul>
+                                                    </div>
+                                                    <hr>`
         } else {
             this.userProfile.innerHTML += ` <div class="repositories section">
-                                               <h2>Não ha repositórios</h2>
-                                            </div>`
+                                                       <h2>Não ha repositórios</h2>
+                                                    </div>`
         }
+    },
 
+    renderEvent(user) {
         let recentEventsList = ""
 
         user.recentEvents.forEach(element => {
@@ -52,16 +63,14 @@ const screen = {
 
         if (recentEventsList.length > 0) {
             this.userProfile.innerHTML += ` <div class="events">
-                                                <h2>Eventos</h2>
-                                                <ul>${recentEventsList}</ul>
-                                            </div>`
+                                                            <h2>Eventos</h2>
+                                                            <ul>${recentEventsList}</ul>
+                                                        </div>`
         } else {
             this.userProfile.innerHTML += ` <div class="events">
-                                                 <h2>Não ha Eventos ressentes</h2>
-                                            </div>`
+                                                             <h2>Não ha Eventos recentes</h2>
+                                                        </div>`
         }
-
-
     },
 
     renderNotFound() {
@@ -70,4 +79,5 @@ const screen = {
                                         </div>`
     }
 }
+
 export { screen }

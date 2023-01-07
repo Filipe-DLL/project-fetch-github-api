@@ -3,8 +3,8 @@ const user = {
     name: "",
     login: "",
     bio: "",
-    followers: "",
-    following: "",
+    followers: "0",
+    following: "0",
     repositories: [],
     recentEvents: [],
     setInfo(userResponse){
