@@ -32,7 +32,7 @@ const screen = {
                                             <div class="icons">🍴${element.forks_count}</div>
                                             <div class="icons">⭐${element.stargazers_count}</div>
                                             <div class="icons">👀${element.watchers_count}</div>
-                                            <div class="icons">💻${element.language}</div>
+                                            <div class="icons">💻${element.language ?? "Não possui linguagem"}</div>
                                             </a>
                                         </li>`
         });
