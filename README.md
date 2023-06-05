@@ -27,7 +27,7 @@ Algumas das funcionalidades deste projeto incluem:
 2. Instale a extensão do Live Server no Visual Studio Code. Você pode fazer isso abrindo o Visual Studio Code, clicando na barra lateral esquerda no ícone de extensões (quatro quadrados sobrepostos), pesquisando por "Live Server" e selecionando a extensão "Live Server" da lista de resultados. Clique em "Instalar".
 
 3. Clone este repositório para o seu computador:
-4. 
+
 	`git clone https://github.com/seu-usuario/seu-repositorio.git`
 
 4. Abra a pasta do projeto no Visual Studio Code.
